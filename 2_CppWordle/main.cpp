@@ -42,15 +42,20 @@ bool palabraValida (std::string palabra, const std::string& objetivo, const std:
         }
     }
 
+    bool marque;
     for (int i = 0; i < 5; ++i){
         if (colores[i] == '3'){
+            marque = false;
             for(int j = 0; j < 5; ++j){
                 if(palabra[j] == objetivo[i]){
                     palabra[j] = '[';
+                    marque = true;
                     break;
                 }
             }
-            return false;
+            if (!marque){
+                return false;
+            }
         }
     }
 
@@ -156,11 +161,11 @@ std::vector<std::string> topPalabras (const std::unordered_set<int>& palabras, c
         }
 
         if (pq.size() < 5){
-            pq.push({ puntaje, lista[*iti] });
+            pq.emplace( puntaje, lista[*iti] );
         } else {
             if (pq.top().first < puntaje){
                 pq.pop();
-                pq.push({ puntaje, lista[*iti] });
+                pq.emplace( puntaje, lista[*iti] );
             }
         }
     }
@@ -226,7 +231,12 @@ int main() {
     int jugadas = 1;
     while (true) {
         std::cout << "--- Calculando mejores palabras ---" << std::endl;
+        start = std::chrono::high_resolution_clock::now();
         std::vector<std::string> mejores = topPalabras(palsValidas, listaPals, matriz);
+        stop = std::chrono::high_resolution_clock::now();
+        duration = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
+        if (duration.count() != 0)
+            std::cout << "Demoró " << duration.count() << " segundos en calcular las mejores palabras." << std::endl;
         std::cout << "Quedan " << palsValidas.size() << " palabras, y las mejores son:" << std::endl;
         int i = 1;
         for (auto it = mejores.begin(); it != mejores.end(); ++it){

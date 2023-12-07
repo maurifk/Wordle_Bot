@@ -6,6 +6,8 @@ TARGET = main
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
+FILES_TO_REMOVE = esp_matriz.txt eng_matriz.txt engF_matriz.txt
+
 $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
@@ -14,3 +16,6 @@ $(TARGET): $(OBJS)
 
 clean:
 	rm -f $(OBJS) $(TARGET)
+
+clean_all:
+	rm -f $(FILES_TO_REMOVE) $(OBJS) $(TARGET)
