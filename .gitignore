@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+2_CppWordle/CMakeLists.txt
+2_CppWordle/.idea/*
+2_CppWordle/cmake-*
+2_CppWordle/eng_matriz.txt
+2_CppWordle/engF_matriz.txt
+2_CppWordle/esp_matriz.txt
