@@ -27,13 +27,11 @@ This version I made it on Summer 2023, armed with two courses on C++ programming
     5. AIREA
 
 However, with the internal scorings changed to 5 points a green, 1 point yellow, the words change, and it tends to play better, solving it in around 3.8 turns:
-
     1. CAREO
     2. SARAO
     3. CARAS
     4. CAREA
     5. CARAO
-
  
  3. **Summer 2024 plans**
 The plans going forward are to, firstly, improve the algorithm, since it has considerable flaws, for example, it can not play a word it has already discarded, a strategy worth considering for earlier turns since it can return valuable information. The idea of static scores also does not seem fully right, since it has a lot of ties that are being solved randomly. My plan with this project is not to just copy others algorithms, so the algorithms are my own tests and possibly, not the best strategies. This will be done in Java, since it is the language I am most comfortable in. Also, this will include parallelization, an area I had no knowledge before the courses I took in 2023. Then, the next idea is to create a bot which plays the game automatically, allowing me to better assess different strategies and measure the average number of turns it takes for each strategy to win.
