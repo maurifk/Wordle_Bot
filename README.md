@@ -19,13 +19,12 @@ Each solver has 3 different languages, Spanish, English and "Filtered" English, 
 2. **C++ Solver**
 This version I made it on Summer 2023, armed with two courses on C++ programming I decided to remake the Pascal version, mainly focused on improving QOL aspects, since I had gather a lot more experience programming and knew better ways to achieve the same. This version works with the same algorithm, but you can select the language when you first open it, the first time a language is chosen, a matrix is saved on a "<language>_matriz.txt" making the next runs a lot faster, it drops from taking around 85 seconds to give the first words, to just 11 seconds. Also, after the third turn, it gives the option to restart the bot.
 	 The algorithm is almost identical to the one in the Pascal version, however, it is easier to change the scores given to each color, so it allows for better testing. The Pascal version was fixed on 5 points for a green and 3 points for a yellow, numbers I just invented since they seemed . In the C++ version, with these weights it gives the following 5 words for the first turn, almost identical to the ones given by Pascal and by transitive, it also takes around 4.5 turns to solve a game:
-	 
-    1. ROSEA
+ 	1. ROSEA
     2. AIREO
     3. AREAS
     4. SARAO
     5. AIREA
-
+       
 However, with the internal scorings changed to 5 points a green, 1 point yellow, the words change, and it tends to play better, solving it in around 3.8 turns:
     1. CAREO
     2. SARAO
