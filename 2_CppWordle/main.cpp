@@ -75,7 +75,7 @@ bool palabraValida (std::string palabra, const std::string& objetivo, const std:
 
 int puntajePal (std::string pal, const std::string& objetivo){
     const int puntajeVerde = 5;
-    const int puntajeAmarillo = 3;
+    const int puntajeAmarillo = 1;
     int puntaje = 0;
     std::string colores = "GGGGG";
 
