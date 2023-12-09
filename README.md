@@ -17,8 +17,10 @@ Each solver has 3 different languages, Spanish, English and "Filtered" English, 
     5. CAREO
 	 
 2. **C++ Solver**
+
     This version I made it on Summer 2023, armed with two courses on C++ programming I decided to remake the Pascal version, mainly focused on improving QOL aspects, since I had gather a lot more experience programming and knew better ways to achieve the same. This version works with the same algorithm, but you can select the language when you first open it, the first time a language is chosen, a matrix is saved on a "<language>_matriz.txt" making the next runs a lot faster, it drops from taking around 85 seconds to give the first words, to just 11 seconds. Also, after the third turn, it gives the option to restart the bot.
     The algorithm is almost identical to the one in the Pascal version, however, it is easier to change the scores given to each color, so it allows for better testing. The Pascal version was fixed on 5 points for a green and 3 points for a yellow, numbers I just invented since they seemed . In the C++ version, with these weights it gives the following 5 words for the first turn, almost identical to the ones given by Pascal and by transitive, it also takes around 4.5 turns to solve a game:
+
  	1. ROSEA
     2. AIREO
     3. AREAS
@@ -34,6 +36,7 @@ Each solver has 3 different languages, Spanish, English and "Filtered" English, 
     5. CARAO
  
 3. **Summer 2024 plans**
+
     The plans going forward are to, firstly, improve the algorithm, since it has considerable flaws, for example, it can not play a word it has already discarded, a strategy worth considering for earlier turns since it can return valuable information. The idea of static scores also does not seem fully right, since it has a lot of ties that are being solved randomly. My plan with this project is not to just copy others algorithms, so the algorithms are my own tests and possibly, not the best strategies. This will be done in Java, since it is the language I am most comfortable in. Also, this will include parallelization, an area I had no knowledge before the courses I took in 2023. Then, the next idea is to create a bot which plays the game automatically, allowing me to better assess different strategies and measure the average number of turns it takes for each strategy to win.
     This opens the opportunity to make a bot that automatically learns and does not use any "hard-coded" strategy, allowing me  to observe it's decisions and try to understand them and try to see a pattern.
 		
