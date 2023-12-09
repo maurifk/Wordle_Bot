@@ -1,4 +1,4 @@
-package wordle.bot;
+package wordle.bot.logic;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -10,9 +10,9 @@ import org.javatuples.Pair;
 
 public class WordReader {
     private ArrayList<String> wordsList;
-    static int spanishWords = 10836;
-    static int englishWords = 12972;
-    static int englishFiltered = 2315;
+    public static int spanishWords = 10836;
+    public static int englishWords = 12972;
+    public static int englishFiltered = 2315;
     
     private SelectedLanguage selectedLanguage;
 
