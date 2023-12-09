@@ -1,5 +1,4 @@
 ﻿# Wordle_Bot
- *Wordle solvers iterated over different languages and algorithms.*
 This is my summer holidays project. Since Summer 2022, with having only taken my first programming class, I made the first version in Pascal, the only language I knew.
 Each solver has 3 different languages, Spanish, English and "Filtered" English, being the last one a subset of English with only the words the original Wordle used.
  
