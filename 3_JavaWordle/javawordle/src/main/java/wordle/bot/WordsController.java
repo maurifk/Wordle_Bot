@@ -2,7 +2,7 @@ package wordle.bot;
 
 import java.util.List;
 
-import wordle.bot.exceptions.ExceptionNoReader;
+import wordle.bot.exceptions.ExceptionReader;
 import wordle.bot.logic.wordreader.SelectedLanguage;
 import wordle.bot.logic.wordreader.WordReader;
 
@@ -15,12 +15,12 @@ public class WordsController implements IWordsController {
 	}
 
 	@Override
-	public List<String> getWords() throws ExceptionNoReader {
+	public List<String> getWords() throws ExceptionReader {
 		if (wReader == null)
-			throw new ExceptionNoReader("Words were not loaded");
-		
+			throw new ExceptionReader("Words were not loaded");
+
 		return wReader.getWordsList();
 	}
-	
-	
+
+
 }

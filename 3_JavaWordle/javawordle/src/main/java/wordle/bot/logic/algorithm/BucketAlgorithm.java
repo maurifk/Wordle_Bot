@@ -1,5 +1,19 @@
 package wordle.bot.logic.algorithm;
 
-public class BucketAlgorithm {
-	
+import java.util.List;
+
+public class BucketAlgorithm implements IAlgorithm{
+
+	@Override
+	public void setDictionary(List<String> words) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'setDictionary'");
+	}
+
+	@Override
+	public List<String> getBestWords(List<String> wordsLeft, int maxWords, boolean useAllWords) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getBestWords'");
+	}
+
 }

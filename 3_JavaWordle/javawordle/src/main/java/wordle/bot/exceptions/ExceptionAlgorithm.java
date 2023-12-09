@@ -1,11 +1,9 @@
 package wordle.bot.exceptions;
 
-public class ExceptionNoReader extends Exception {
-
+public class ExceptionAlgorithm extends Exception {
 	private static final long serialVersionUID = -7081384586412228596L;
-	
-	public ExceptionNoReader(String error) {
+
+	public ExceptionAlgorithm(String error) {
 		super(error);
 	}
-
 }
