@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import wordle.bot.IWordsController;
-import wordle.bot.logic.SelectedLanguage;
+import wordle.bot.logic.wordreader.SelectedLanguage;
 import wordle.bot.Factory;
 
 import java.awt.BorderLayout;

@@ -1,4 +1,4 @@
-package wordle.bot.logic;
+package wordle.bot.logic.wordreader;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

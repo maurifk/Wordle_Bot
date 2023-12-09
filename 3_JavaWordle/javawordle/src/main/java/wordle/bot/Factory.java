@@ -1,12 +1,20 @@
 package wordle.bot;
 
 public class Factory {
-	private static WordsController instance = null;
+	private static WordsController instanceWC = null;
+	private static AlgorithmController instanceAlg = null;
 	
 	public static IWordsController getWordsController() {
-		if (instance == null) 
-			instance = new WordsController();
+		if (instanceWC == null) 
+			instanceWC = new WordsController();
 		
-		return instance;
+		return instanceWC;
+	}
+	
+	public static IAlgorithmController getAlgorithmController() {
+		if (instanceAlg == null)
+			instanceAlg = new AlgorithmController();
+		
+		return instanceAlg;
 	}
 }

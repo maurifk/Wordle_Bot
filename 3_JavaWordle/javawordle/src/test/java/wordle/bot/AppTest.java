@@ -2,8 +2,8 @@ package wordle.bot;
 
 import org.junit.jupiter.api.Test;
 
-import wordle.bot.logic.SelectedLanguage;
-import wordle.bot.logic.WordReader;
+import wordle.bot.logic.wordreader.SelectedLanguage;
+import wordle.bot.logic.wordreader.WordReader;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
