@@ -7,14 +7,11 @@ public class Base3 {
 
 	public Base3 (int num) {
 		this.num = num;
-		this.base3 = toString(num);
-		getColors();
 	}
 
 	public Base3 (String base3) {
 		this.base3 = base3;
 		this.num = toInteger(base3);
-		getColors();
 	}
 
 	public Color[] getColors() {
@@ -32,7 +29,7 @@ public class Base3 {
 
 	// Gets the number from String in base 3
 	public static int toInteger(String base3) {
-		return Integer.parseInt(base3, 0);
+		return Integer.parseInt(base3, 3);
 	}
 
 	// Always returns a 5 digit number in base 3
@@ -46,6 +43,20 @@ public class Base3 {
 	}
 
 	public Color getColor(int index) {
+		if (base3 == null) {
+			getString();
+		}
 		return Color.values()[base3.charAt(index) - '0'];
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public String getString() {
+		if (base3 == null) {
+			base3 = toString(num);
+		}
+		return base3;
 	}
 }

@@ -2,9 +2,6 @@ package wordle.bot;
 
 import wordle.bot.gui.Selector;
 
-/**
- * Hello world!
- */
 public final class App {
     private App() {
     }

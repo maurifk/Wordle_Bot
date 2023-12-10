@@ -16,6 +16,18 @@ public class WordReader {
     
     private SelectedLanguage selectedLanguage;
 
+    public static int getAmmountWords(SelectedLanguage language) {
+        switch (language) {
+            case SPANISH:
+                return spanishWords;
+            case ENGLISH:
+                return englishWords;
+            case ENGLISH_FILTERED:
+                return englishFiltered;
+        }
+        return 0;
+    }
+
     public WordReader(SelectedLanguage selectedLanguage) {
         this.selectedLanguage = selectedLanguage;
         wordsList = new ArrayList<String>();
