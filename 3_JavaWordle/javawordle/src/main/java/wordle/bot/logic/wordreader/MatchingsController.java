@@ -5,15 +5,44 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import wordle.bot.logic.algorithm.helpers.Base3;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class GenerateMatchings {
+public class MatchingsController {
+    private static int[][] matchingsSaved = null;
+    private static Map<String, Integer> wordsMap = null;
+    private static boolean savedMatrix = false;
 
-    public static int getColors(String playedWord, String answer) {
+    public MatchingsController(SelectedLanguage language) {
+        WordReader wordReader = new WordReader(language);
+        List<String> constantWords = wordReader.getWordsList();
+
+        matchingsSaved = readMatrix(language);
+        wordsMap = new HashMap<String, Integer>(constantWords.size());
+
+        int i = 0;
+        for (String word : constantWords) {
+            wordsMap.put(word, i++);
+        }
+
+        savedMatrix = true;
+
+    }
+
+    public int getColors(String playedWord, String answer) {
+        return matchingsSaved[wordsMap.get(playedWord)][wordsMap.get(answer)];
+    }
+
+    public static int getColorsStatic(String playedWord, String answer) {
+        if (savedMatrix) {
+            return matchingsSaved[wordsMap.get(playedWord)][wordsMap.get(answer)];
+        }
+
         StringBuilder sb = new StringBuilder(answer);
         StringBuilder colors = new StringBuilder();
 
@@ -38,7 +67,7 @@ public class GenerateMatchings {
         int[][] matchings = new int[constantWords.size()][constantWords.size()];
         for (int i = 0; i < constantWords.size(); i++) {
             for (int j = 0; j < constantWords.size(); j++) {
-                matchings[i][j] = getColors(constantWords.get(i), constantWords.get(j));
+                matchings[i][j] = getColorsStatic(constantWords.get(i), constantWords.get(j));
             }
         }
         return matchings;
@@ -71,7 +100,7 @@ public class GenerateMatchings {
     }
 
     public void test() {
-        
+
     }
 
     public int[][] readMatrix(SelectedLanguage language) {

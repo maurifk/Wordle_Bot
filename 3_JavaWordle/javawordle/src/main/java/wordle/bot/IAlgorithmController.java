@@ -18,6 +18,8 @@ public interface IAlgorithmController {
 
 	public void setStrategy(boolean[] strategy);
 
+	public List<String> getBestWords() throws ExceptionAlgorithm, ExceptionReader;
+
 	public List<String> playWord(String word, Base3 pattern) throws ExceptionAlgorithm;
 
 	public List<Pair<String, Base3>> getHistory();

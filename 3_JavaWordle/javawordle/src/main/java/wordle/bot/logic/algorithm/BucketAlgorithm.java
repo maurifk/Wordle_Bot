@@ -5,6 +5,12 @@ import java.util.List;
 public class BucketAlgorithm implements IAlgorithm{
 
 	@Override
+	public void startAlgorithm() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'startAlgorithm'");
+	}
+
+	@Override
 	public void setDictionary(List<String> words) {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'setDictionary'");
@@ -15,5 +21,7 @@ public class BucketAlgorithm implements IAlgorithm{
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'getBestWords'");
 	}
+
+
 
 }

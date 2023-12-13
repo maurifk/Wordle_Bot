@@ -6,14 +6,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import org.javatuples.Pair;
 
 public class WordReader {
     private ArrayList<String> wordsList;
     public static int spanishWords = 10836;
     public static int englishWords = 12972;
     public static int englishFiltered = 2315;
-    
+
     private SelectedLanguage selectedLanguage;
 
     public static int getAmmountWords(SelectedLanguage language) {
@@ -43,14 +42,14 @@ public class WordReader {
                 break;
         }
     }
-    
+
     private void loadFile(String filename) {
     try {
         InputStream is = getClass().getResourceAsStream("/" + filename);
         if (is == null) {
             throw new FileNotFoundException("File not found: " + filename);
         }
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(is));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(is, "UTF-8")); // Specify the encoding as UTF-8, Ñ failed
         String line;
         while ((line = bufferedReader.readLine()) != null) {
             wordsList.add(line);
@@ -61,8 +60,8 @@ public class WordReader {
     }
 }
 
-    public Pair<SelectedLanguage, Integer> getWordsData() {
-        return new Pair<SelectedLanguage, Integer>(selectedLanguage, wordsList.size());
+    public SelectedLanguage getSelectedLanguage() {
+        return selectedLanguage;
     }
 
     public ArrayList<String> getWordsList() {

@@ -37,8 +37,9 @@ public class AlgorithmController implements IAlgorithmController {
 
 		history = new LinkedList<Pair<String, Base3>>();
 
-		algorithm.setDictionary(this.dictionary);
 		this.algorithm = algorithmI;
+		algorithm.setDictionary(this.dictionary);
+		algorithm.startAlgorithm();
 	}
 
 	@Override
@@ -134,6 +135,22 @@ public class AlgorithmController implements IAlgorithmController {
 		algorithm = null;
 		maxWords = 5;
 		strategy = new boolean[] {true, true, false, false, false, false};
+	}
+
+	@Override
+	public List<String> getBestWords() throws ExceptionAlgorithm, ExceptionReader {
+		if (algorithm == null) {
+			throw new ExceptionAlgorithm("Algorithm is null");
+		}
+
+		if (wordsLeft == null) {
+			if (dictionary == null) {
+				setDictionary();
+			}
+			wordsLeft = dictionary;
+		}
+
+		return algorithm.getBestWords(wordsLeft, maxWords, strategy[minInt(history.size(), strategy.length - 1)]);
 	}
 
 }
